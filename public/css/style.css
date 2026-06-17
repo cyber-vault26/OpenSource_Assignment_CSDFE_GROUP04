@@ -1,0 +1,227 @@
+/* public/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex; /* Use flexbox for sidebar and main content */
+    background-color: #f4f7f6;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Dark blue-grey */
+    color: #ecf0f1;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    height: 100vh; /* Full height */
+    position: fixed; /* Fixed sidebar */
+}
+
+.sidebar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3498db; /* Blue */
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li.active a {
+    background-color: #34495e; /* Slightly lighter dark blue-grey */
+}
+
+.main-content {
+    margin-left: 250px; /* Offset for fixed sidebar */
+    flex-grow: 1; /* Take remaining width */
+}
+
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.navbar .search-bar input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.navbar .search-bar button {
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navbar .user-info {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Forms and Tables */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+form button {
+    background-color: #2ecc71; /* Green */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form button:hover {
+    background-color: #27ae60;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #eee;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary { background-color: #3498db; }
+.btn-primary:hover { background-color: #2980b9; }
+.btn-danger { background-color: #e74c3c; }
+.btn-danger:hover { background-color: #c0392b; }
+.btn-info { background-color: #9b59b6; }
+.btn-info:hover { background-color: #8e44ad; }
+
+.incident-detail-card {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.incident-detail-card h2 {
+    color: #34495e;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.incident-detail-card p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.incident-detail-card p strong {
+    display: inline-block;
+    width: 150px; /* Align labels */
+    color: #555;
+}
+
+.incident-detail-card .status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.status-badge.New { background-color: #f39c12; } /* Orange */
+.status-badge.Acknowledged { background-color: #3498db; } /* Blue */
+.status-badge.Investigating { background-color: #e67e22; } /* Dark Orange */
+.status-badge.Contained { background-color: #27ae60; } /* Green */
+.status-badge.Resolved { background-color: #2ecc71; } /* Lighter Green */
+.status-badge.Closed { background-color: #95a5a6; } /* Grey */
