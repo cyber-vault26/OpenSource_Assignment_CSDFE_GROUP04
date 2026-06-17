@@ -81,7 +81,7 @@ if ($authController->getUserRole() == 'admin' || $authController->getUserRole() 
     <label for="resolution_notes">Resolution Notes:</label>
     <textarea id="resolution_notes" name="resolution_notes" rows="4"><?= htmlspecialchars($incident['resolution_notes'] ?? '') ?></textarea>
 
-    <label for="resolution_date">Resolution Date (Optional):</label>
+    <label for="resolution_date">Resolution Date (Optional - defaults to current time if left blank on update):</label>
     <input type="datetime-local" id="resolution_date" name="resolution_date" value="<?= (isset($incident['resolution_date']) && $incident['resolution_date']) ? date('Y-m-d\TH:i', strtotime($incident['resolution_date'])) : '' ?>">
 
     <button type="submit" class="btn btn-info">Update Incident</button>
